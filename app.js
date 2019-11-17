@@ -1,3 +1,10 @@
+// Name:HADI HASSAN
+// StudentNum: 040879490
+// Email: dahi0030@algonquinlive.com
+
+
+
+
 // let firstData = fetch('https://jsonbox.io/box_7ebd8cb0b8fb187873ef');
 // let secondData = fetch('https://jsonbox.io/box_82b5a4aa7a4a71abaa80');
 let firstData = fetch('https://gist.githubusercontent.com/prof3ssorSt3v3/22eb7745efdee9e130ed13cc19d85b75/raw/9dd9becedcf05e4392323645f7d8618ff26b1c38/box_7ebd8cb0b8fb187873ef.json');
