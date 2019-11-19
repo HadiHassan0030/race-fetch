@@ -27,7 +27,7 @@ Promise.race([firstData, secondData])
 
 
 
-        h1.textContent = data.type;
+        h1.textContent = data[0].type;
         document.querySelector('div').appendChild(h1)
 
 
