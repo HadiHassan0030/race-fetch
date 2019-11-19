@@ -5,10 +5,8 @@
 
 
 
-// let firstData = fetch('https://jsonbox.io/box_7ebd8cb0b8fb187873ef');
-// let secondData = fetch('https://jsonbox.io/box_82b5a4aa7a4a71abaa80');
-let firstData = fetch('https://gist.githubusercontent.com/prof3ssorSt3v3/22eb7745efdee9e130ed13cc19d85b75/raw/9dd9becedcf05e4392323645f7d8618ff26b1c38/box_7ebd8cb0b8fb187873ef.json');
-let secondData = fetch('https://gist.githubusercontent.com/prof3ssorSt3v3/9fcda9dc6d5e94e5689de33b0d9d45f8/raw/f1a89ab08aff538c1a7d4b85d0d7ba76ea92b88e/box_82b5a4aa7a4a71abaa80.json');
+let firstData = fetch('https://gist.githubusercontent.com/gard0137/d978a3672c361c046d182c748a2b4bb7/raw/a5e9fcafa41c0fbab03aed34679438ed1d03b7b8/lebow.json');
+let secondData = fetch('https://gist.githubusercontent.com/gard0137/39b467726693000b9c1074c4c7e59b2b/raw/10cda6a9f7fd2f1f3efa10f6b34e5f5bdb50b88d/archer.json');
 
 
 let div = document.querySelector('div');
@@ -25,7 +23,7 @@ Promise.race([firstData, secondData])
 
     }).then(data => {
 
-        console.log(data.type);
+        console.log(data[0].type);
 
 
 
@@ -33,11 +31,11 @@ Promise.race([firstData, secondData])
         document.querySelector('div').appendChild(h1)
 
 
-        for (i in data.data) {
+        for (i in data[0].data) {
 
-            console.log(data.data)
+            console.log(data[0].data)
 
-            if (data.type == 'The Big Lebowski') {
+            if (data[0].type == 'The Big Lebowski') {
 
 
                 let div = document.querySelector('div');
@@ -47,15 +45,15 @@ Promise.race([firstData, secondData])
 
 
 
-                ul.textContent = 'id: ' + data.data[i].id;
+                ul.textContent = 'id: ' + data[0].data[i].id;
                 document.querySelector('div').insertAdjacentElement('beforeend', ul);
 
 
-                p.textContent = 'Actor: ' + data.data[i].actor;
+                p.textContent = 'Actor: ' + data[0].data[i].actor;
                 document.querySelector('div').insertAdjacentElement('beforeend', p);
 
 
-                span.textContent = 'Charcter: ' + data.data[i].character;
+                span.textContent = 'Charcter: ' + data[0].data[i].character;
                 document.querySelector('div').insertAdjacentElement('beforeend', span);
 
 
@@ -64,7 +62,7 @@ Promise.race([firstData, secondData])
 
             }
 
-            if (data.type == 'archer') {
+            if (data[0].type == 'archer') {
 
                 let div = document.querySelector('div');
                 let p = document.createElement('p');
@@ -72,13 +70,13 @@ Promise.race([firstData, secondData])
                 let span = document.createElement('span')
 
 
-                ul.textContent = 'id: ' + data.data[i].id;
+                ul.textContent = 'id: ' + data[0].data[i].id;
                 document.querySelector('div').insertAdjacentElement('beforeend', ul);
 
-                p.textContent = 'First Name: ' + data.data[i].first_name;
+                p.textContent = 'First Name: ' + data[0].data[i].first_name;
                 document.querySelector('div').insertAdjacentElement('beforeend', p);
 
-                span.textContent = 'Last Name: ' + data.data[i].last_name;
+                span.textContent = 'Last Name: ' + data[0].data[i].last_name;
                 document.querySelector('div').insertAdjacentElement('beforeend', span);
 
 
@@ -92,10 +90,10 @@ Promise.race([firstData, secondData])
         }
 
 
-        if (data.type == 'The Big Lebowski') {
+        if (data[0].type == 'The Big Lebowski') {
             div.classList.add('lebowski');
         }
-        if (data.type == 'archer') {
+        if (data[0].type == 'archer') {
             div.classList.add('archer');
         }
 
